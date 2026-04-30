@@ -282,8 +282,8 @@
                     '.xlsx';
                 link.click();
             },
-            error: function(xhr, error, code) {
-                sweetAlertError(xhr.responseJSON.message);
+            error: function(xhr, status, error) {
+                sweetAlertError(error);
             }
         });
     }

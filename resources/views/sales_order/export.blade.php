@@ -142,7 +142,7 @@
                             <td rowspan="{{ count($sales_order_data['sales_order_item']) }}" style="vertical-align: middle;">
                                 {{ $index + 1 }}
                             </td>
-                            <td style="text-align:left" rowspan="{{ count($sales_order_data['sales_order_item']) }}" style="vertical-align: top;">
+                            <td rowspan="{{ count($sales_order_data['sales_order_item']) }}" style="vertical-align: top;">
                                 {{ $sales_order_data['invoice_number'] }}
                             </td>
                             <td rowspan="{{ count($sales_order_data['sales_order_item']) }}" style="vertical-align: top;">

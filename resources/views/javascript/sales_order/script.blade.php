@@ -152,8 +152,6 @@
     }
 
     function addProduct(product) {
-        console.log(product);
-
         let token = $('meta[name="csrf-token"]').attr('content');
 
         if ($("#product_" + product).length == 0) {
