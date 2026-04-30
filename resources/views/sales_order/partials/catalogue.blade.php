@@ -1,6 +1,6 @@
 <div class="row g-4 justify-content-start mt-5">
     @foreach ($products as $product)
-        <div class="col-md-6 col-lg-6 col-xl-6 py-3 d-flex">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-6 py-3 d-flex">
             <div class="rounded position-relative shadow d-flex flex-column w-100">
                 <div class="w-100 rounded-top border-bottom border-bottom-secondary bg-image"
                     style="background-image:url('{{ asset($product->picture) }}'); height:300px; background-size:cover; background-position:center;">
@@ -20,7 +20,7 @@
                         @endif
                     </div> --}}
                     <div class="mt-3">
-                        <h5 class="mt-3">
+                        <h5 class="mt-3 mb-3">
                             <b>{{ $product->name }}</b>
                         </h5>
                         @if (!is_null($product->discount_price))
@@ -29,18 +29,15 @@
                                     (intval($product->sell_price) - intval($product->discount_price)) /
                                     (intval($product->sell_price) / 100);
                             @endphp
-                            <h5 class="text-dark mb-2">
-                                Rp.
-                                {{ \App\Helpers\NumberFormat::formatCurrency($product->discount_price) }}
-                            </h5>
-                            <div class="d-flex">
+                            <div class="d-flex flex-row align-items-center">
+                                <h5 class="text-dark mb-0 mr-2">
+                                    Rp.
+                                    {{ \App\Helpers\NumberFormat::formatCurrency($product->discount_price) }}
+                                </h5>
                                 <span class="text-muted mr-2 my-auto">
                                     <s>Rp.
                                         {{ \App\Helpers\NumberFormat::formatCurrency($product->sell_price) }}</s>
                                 </span>
-                                <div class="bg-danger text-white p-1 rounded">
-                                    {{ $percentage_product }}%
-                                </div>
                             </div>
                         @else
                             <h5 class="text-dark mb-2">
