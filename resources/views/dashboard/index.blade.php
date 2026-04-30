@@ -177,6 +177,9 @@
                                             <th>
                                                 Total Keuntungan
                                             </th>
+                                            <th>
+                                                Created At
+                                            </th>
                                         </tr>
                                     </thead>
                                 </table>

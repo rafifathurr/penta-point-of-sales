@@ -40,6 +40,10 @@
                     searchable: false
                 },
                 {
+                    data: 'picture',
+                    defaultContent: '-',
+                },
+                {
                     data: 'name',
                     defaultContent: '-',
                 },

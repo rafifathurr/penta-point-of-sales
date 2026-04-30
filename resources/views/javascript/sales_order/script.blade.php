@@ -109,7 +109,7 @@
                     defaultContent: '-',
                 },
                 {
-                    data: 'total_discount_price',
+                    data: 'discount_price',
                     defaultContent: '-',
                 },
                 {
@@ -117,19 +117,7 @@
                     defaultContent: '-',
                 },
                 {
-                    data: 'created_by',
-                    defaultContent: '-',
-                },
-                {
                     data: 'created_at',
-                    defaultContent: '-',
-                },
-                {
-                    data: 'updated_by',
-                    defaultContent: '-',
-                },
-                {
-                    data: 'updated_at',
                     defaultContent: '-',
                 },
                 {

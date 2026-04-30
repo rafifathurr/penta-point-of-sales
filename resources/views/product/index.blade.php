@@ -24,6 +24,9 @@
                                             #
                                         </th>
                                         <th>
+                                            Foto Produk
+                                        </th>
+                                        <th>
                                             Nama
                                         </th>
                                         <th>

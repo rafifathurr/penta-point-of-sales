@@ -63,6 +63,9 @@ class ProductController extends Controller
          */
         $dataTable = DataTables::of($products)
             ->addIndexColumn()
+            ->addColumn('picture', function ($data) {
+                return '<img width="10%" src="' . asset($data->picture) . '" alt="">';
+            })
             ->addColumn('category', function ($data) {
                 /**
                  * Return Relation Category Product
@@ -111,8 +114,8 @@ class ProductController extends Controller
                 $btn_action .= '</div>';
                 return $btn_action;
             })
-            ->only(['name', 'category', 'sell_price', 'discount_price', 'status', 'created_at', 'updated_at', 'action'])
-            ->rawColumns(['sell_price', 'discount_price', 'status', 'action'])
+            ->only(['picture', 'name', 'category', 'sell_price', 'discount_price', 'status', 'created_at', 'updated_at', 'action'])
+            ->rawColumns(['picture', 'sell_price', 'discount_price', 'status', 'action'])
             ->make(true);
 
         return $dataTable;
