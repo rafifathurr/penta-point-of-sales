@@ -59,8 +59,8 @@
                         <div class="form-group row mb-0">
                             <label class="col-sm-3 col-form-label font-weight-bold">Foto Produk</label>
                             <div class="col-sm-9 col-form-label">
-                                <img width="10%" src="{{ asset($product->picture) }}" alt=""
-                                    class="border border-1-default">
+                                <img src="{{ asset($product->picture) }}" alt=""
+                                    class="rounded w-25 border">
                             </div>
                         </div>
                         <div class="form-group row mb-0">

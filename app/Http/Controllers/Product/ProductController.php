@@ -64,7 +64,7 @@ class ProductController extends Controller
         $dataTable = DataTables::of($products)
             ->addIndexColumn()
             ->addColumn('picture', function ($data) {
-                return '<img width="10%" src="' . asset($data->picture) . '" alt="">';
+                return file_exists($data->picture) ? '<img src="' . asset($data->picture) . '" alt="" class="rounded w-25 h-25">' : null;
             })
             ->addColumn('category', function ($data) {
                 /**

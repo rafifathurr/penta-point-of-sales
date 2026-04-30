@@ -276,8 +276,10 @@
             success: function(data) {
                 Swal.close();
                 var link = document.createElement('a');
+                const now = new Date();
                 link.href = window.URL.createObjectURL(data);
-                link.download = 'Laporan_Penjualan_' + month + '_' + year + '.xlsx';
+                link.download = 'Laporan_Penjualan_' + year + '_' + month + '_' + now.getTime() +
+                    '.xlsx';
                 link.click();
             },
             error: function(xhr, error, code) {

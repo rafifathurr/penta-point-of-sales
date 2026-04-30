@@ -4,8 +4,9 @@ namespace App\Exports\SalesOrder;
 
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class SalesOrderExport implements FromView
+class SalesOrderExport implements FromView, ShouldAutoSize
 {
     public $data;
 

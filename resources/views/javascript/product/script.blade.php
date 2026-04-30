@@ -41,7 +41,9 @@
                 },
                 {
                     data: 'picture',
+                    width: '20%',
                     defaultContent: '-',
+                    class: 'text-center'
                 },
                 {
                     data: 'name',

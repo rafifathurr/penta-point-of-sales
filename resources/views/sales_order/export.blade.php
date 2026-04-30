@@ -10,7 +10,10 @@
         <thead>
             <tr>
                 <th colspan="14" style="text-align:center;">
-                    <h3>Laporan Penjualan {{ $sales_order['month'] . ' ' . $sales_order['year'] }}
+                    <h3>
+                        <b>
+                            Laporan Penjualan {{ $sales_order['month'] . ' ' . $sales_order['year'] }}
+                        </b>
                     </h3>
                 </th>
             </tr>
@@ -18,46 +21,102 @@
         <thead>
             <tr>
                 <th>
-                    No
+                    <center>
+                        <b>
+                            No
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    No. Invoice
+                    <center>
+                        <b>
+                            No. Invoice
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Tanggal
+                    <center>
+                        <b>
+                            Tanggal
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Created At
+                    <center>
+                        <b>
+                            Created At
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Metode Pembayaran
+                    <center>
+                        <b>
+                            Metode Pembayaran
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Produk
+                    <center>
+                        <b>
+                            Produk
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Harga Jual
+                    <center>
+                        <b>
+                            Harga Jual
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Harga Diskon
+                    <center>
+                        <b>
+                            Harga Diskon
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Qty
+                    <center>
+                        <b>
+                            Qty
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Total Harga
+                    <center>
+                        <b>
+                            Total Harga
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Total Harga Diskon
+                    <center>
+                        <b>
+                            Total Harga Diskon
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Total Harga Akhir
+                    <center>
+                        <b>
+                            Total Harga Akhir
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Total Harga Modal
+                    <center>
+                        <b>
+                            Total Harga Modal
+                        </b>
+                    </center>
                 </th>
                 <th>
-                    Total Keuntungan
+                    <center>
+                        <b>
+                            Total Keuntungan
+                        </b>
+                    </center>
                 </th>
             </tr>
         </thead>
@@ -80,19 +139,19 @@
                 @foreach ($sales_order_data['sales_order_item'] as $sales_order_index => $sales_order_item)
                     <tr>
                         @if ($sales_order_index === 0)
-                            <td rowspan="{{ count($sales_order_data['sales_order_item']) }}">
+                            <td rowspan="{{ count($sales_order_data['sales_order_item']) }}" style="vertical-align: middle;">
                                 {{ $index + 1 }}
                             </td>
-                            <td style="text-align:left" rowspan="{{ count($sales_order_data['sales_order_item']) }}">
+                            <td style="text-align:left" rowspan="{{ count($sales_order_data['sales_order_item']) }}" style="vertical-align: top;">
                                 {{ $sales_order_data['invoice_number'] }}
                             </td>
-                            <td rowspan="{{ count($sales_order_data['sales_order_item']) }}">
+                            <td rowspan="{{ count($sales_order_data['sales_order_item']) }}" style="vertical-align: top;">
                                 {{ date('d F Y', strtotime($sales_order_data['date'])) }}
                             </td>
-                            <td rowspan="{{ count($sales_order_data['sales_order_item']) }}">
+                            <td rowspan="{{ count($sales_order_data['sales_order_item']) }}" style="vertical-align: top;">
                                 {{ date('d F Y', strtotime($sales_order_data['created_at'])) }}
                             </td>
-                            <td rowspan="{{ count($sales_order_data['sales_order_item']) }}">
+                            <td rowspan="{{ count($sales_order_data['sales_order_item']) }}" style="vertical-align: top;">
                                 {{ $sales_order_data['payment_method']['name'] }}
                             </td>
                         @endif
