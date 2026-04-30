@@ -49,7 +49,7 @@
                 },
                 {
                     data: 'status',
-                    width: '15%',
+                    width: '5%',
                     defaultContent: '-',
                     class: 'text-center'
                 },

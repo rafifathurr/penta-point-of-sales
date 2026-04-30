@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <title>Struk Pembelanjaan - {{ $sales_order->invoice_number }}</title>
     <style>
         body {
             font-family: monospace;
@@ -24,6 +25,11 @@
         .right {
             text-align: right;
         }
+
+        table td {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 
@@ -35,10 +41,20 @@
     <br>
     <div class="line"></div>
     <br>
-    Tanggal: {{ date('d/m/Y', strtotime($sales_order->date)) }} <br>
-    Kasir: {{ $sales_order->createdBy->name ?? 'Admin' }}<br>
-    Dibuat Pada: {{ date('d/m/Y H:i:s', strtotime($sales_order->created_at)) }} <br>
-    No: {{ $sales_order->invoice_number }}
+    <table>
+        <tr>
+            <td>No: {{ $sales_order->invoice_number }}</td>
+        </tr>
+        <tr>
+            <td>Tanggal: {{ date('d/m/Y', strtotime($sales_order->date)) }}</td>
+        </tr>
+        <tr>
+            <td>Kasir: {{ $sales_order->createdBy->name ?? 'Admin' }}</td>
+        </tr>
+        <tr>
+            <td>Dibuat Pada: {{ date('d/m/Y H:i:s', strtotime($sales_order->created_at)) }}</td>
+        </tr>
+    </table>
     <br>
     <div class="line"></div>
     <br>
@@ -49,16 +65,17 @@
             </tr>
             <tr>
                 <td>{{ $sales_order_item->qty }} x
-                    {{ \App\Helpers\NumberFormat::formatCurrency($sales_order_item->sell_price) }}</td>
+                    Rp. {{ \App\Helpers\NumberFormat::formatCurrency($sales_order_item->sell_price) }}</td>
                 <td class="right">
-                    {{ \App\Helpers\NumberFormat::formatCurrency(intval($sales_order_item->sell_price) * intval($sales_order_item->qty)) }}
+                    Rp. {{ \App\Helpers\NumberFormat::formatCurrency(intval($sales_order_item->sell_price) * intval($sales_order_item->qty)) }}
                 </td>
             </tr>
             @if (intval($sales_order_item->discount_price) != 0)
                 <tr>
-                    <td>&nbsp;</td>
+                    <td>Diskon</td>
                     <td class="right">
-                        {{ \App\Helpers\NumberFormat::formatCurrency(intval($sales_order_item->discount_price) * intval($sales_order_item->qty)) }}
+                        -
+                        Rp. {{ \App\Helpers\NumberFormat::formatCurrency(intval($sales_order_item->discount_price) * intval($sales_order_item->qty)) }}
                     </td>
                 </tr>
             @endif

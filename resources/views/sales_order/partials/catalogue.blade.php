@@ -19,10 +19,15 @@
                             <p class="text-danger">&nbsp;</p>
                         @endif
                     </div> --}}
-                    <div class="mt-3">
-                        <h5 class="mt-3 mb-3">
-                            <b>{{ $product->name }}</b>
-                        </h5>
+                    <div class="mt-3    ">
+                        <div class="my-2">
+                            <h5 class="font-weight-bold">
+                                {{ $product->name }}
+                            </h5>
+                            <div class="text-muted small">
+                                {{ $product->barcode }}
+                            </div>
+                        </div>
                         @if (!is_null($product->discount_price))
                             @php
                                 $percentage_product =

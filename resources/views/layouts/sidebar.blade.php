@@ -16,7 +16,7 @@
             <li class="nav-item @if (Route::currentRouteName() == 'sales-order.index') active @endif">
                 <a class="nav-link" href="{{ route('sales-order.index') }}">
                     <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-                    <span class="menu-title">Sales Order</span>
+                    <span class="menu-title">Penjualan</span>
                 </a>
             </li>
             {{-- <li class="nav-item @if (Route::currentRouteName() == 'stock-in.index' || Route::currentRouteName() == 'stock-out.index') active @endif">
@@ -82,13 +82,13 @@
             <li class="nav-item @if (Route::currentRouteName() == 'sales-order.index') active @endif">
                 <a class="nav-link" href="{{ route('sales-order.index') }}">
                     <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-                    <span class="menu-title">Sales Order</span>
+                    <span class="menu-title">Penjualan</span>
                 </a>
             </li>
             <li class="nav-item @if (Route::currentRouteName() == 'product.index') active @endif">
                 <a class="nav-link" href="{{ route('product.index') }}">
                     <i class="mdi mdi-format-list-bulleted menu-icon"></i>
-                    <span class="menu-title">Product</span>
+                    <span class="menu-title">Produk</span>
                 </a>
             </li>
         @endif

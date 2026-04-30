@@ -11,7 +11,7 @@
                     <form action="{{ route('sales-order.store') }}" id="form_order" method="post">
                         @csrf
                         <div class="row">
-                            <div class="col-md-9 grid-margin stretch-card">
+                            <div class="col-md-8 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-header bg-white">
                                         <h4 class="card-title mb-0 py-2">Daftar Produk</h4>
@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 grid-margin stretch-card">
+                            <div class="col-md-4 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-header bg-white">
                                         <h4 class="card-title mb-0 py-2">Tambah Penjualan</h4>
