@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         $user_admin = User::create([
             'username' => 'admin',
             'name' => 'Admin',
-            'email' => 'admin@kios.id',
+            'email' => 'admin@pentapos.site',
             'password' => bcrypt('123456789')
         ]);
 
@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
         $user_cashier = User::create([
             'username' => 'cashier-crew-1',
             'name' => 'Cashier Crew 1',
-            'email' => 'cashier1@kios.id',
+            'email' => 'cashier1@pentapos.site',
             'password' => bcrypt('123456789')
         ]);
 

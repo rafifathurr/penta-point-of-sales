@@ -64,7 +64,7 @@ class ProductController extends Controller
         $dataTable = DataTables::of($products)
             ->addIndexColumn()
             ->addColumn('picture', function ($data) {
-                return file_exists($data->picture) ? '<img src="' . asset($data->picture) . '" alt="" class="rounded w-25 h-25">' : null;
+                return file_exists($data->picture) ? '<img src="' . asset($data->picture) . '" alt="" class="rounded-0 w-50 h-50">' : null;
             })
             ->addColumn('category', function ($data) {
                 /**
@@ -195,14 +195,14 @@ class ProductController extends Controller
                         /**
                          * Path Configuration
                          */
-                        $path = 'public/uploads/product';
-                        $path_store = 'storage/uploads/product';
+                        $path   = public_path('uploads/product');
+                        $path_store = 'uploads/product';
 
                         /**
                          * Validation Check Path
                          */
-                        if (!Storage::exists($path)) {
-                            Storage::makeDirectory($path);
+                        if (!file_exists($path)) {
+                            mkdir($path, 0775, true);
                         }
 
                         /**
@@ -214,14 +214,15 @@ class ProductController extends Controller
                         $file_name = $product->id . '_' . $name_product_config . '.' . $file->getClientOriginalExtension();
 
                         /**
-                         * Upload File
+                         * Upload File Langsung ke Public
                          */
-                        $file->storePubliclyAs($path, $file_name);
+                        $file->move($path, $file_name);
 
                         /**
                          * Validation File Success Uploaded
                          */
-                        if (Storage::exists($path . '/' . $file_name)) {
+                        if (file_exists($path . '/' . $file_name)) {
+
                             /**
                              * Update Product with File Picture
                              */
@@ -466,14 +467,14 @@ class ProductController extends Controller
                                 /**
                                  * Path Configuration
                                  */
-                                $path = 'public/uploads/product';
-                                $path_store = 'storage/uploads/product';
+                                $path   = public_path('uploads/product');
+                                $path_store = 'uploads/product';
 
                                 /**
                                  * Validation Check Path
                                  */
-                                if (!Storage::exists($path)) {
-                                    Storage::makeDirectory($path);
+                                if (!file_exists($path)) {
+                                    mkdir($path, 0775, true);
                                 }
 
                                 /**
@@ -485,8 +486,8 @@ class ProductController extends Controller
                                 /**
                                  * Remove Has File Exist
                                  */
-                                if (Storage::exists($path . '/' . $file_name_record)) {
-                                    Storage::delete($path . '/' . $file_name_record);
+                                if (file_exists($path . '/' . $file_name_record)) {
+                                    unlink($path . '/' . $file_name_record);
                                 }
 
                                 /**
@@ -498,14 +499,14 @@ class ProductController extends Controller
                                 $file_name = $id . '_' . $name_product_config . '.' . $file->getClientOriginalExtension();
 
                                 /**
-                                 * Upload File
+                                 * Upload File Langsung ke Public
                                  */
-                                $file->storePubliclyAs($path, $file_name);
+                                $file->move($path, $file_name);
 
                                 /**
                                  * Validation File Success Uploaded
                                  */
-                                if (Storage::exists($path . '/' . $file_name)) {
+                                if (file_exists($path . '/' . $file_name)) {
                                     /**
                                      * Update Product with File Picture
                                      */
